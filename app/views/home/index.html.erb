@@ -1,2 +1,19 @@
-<h1>The Gram</h1>
-<p>This is the home page for the image sharing app called 'The Gram'</p>
+
+<div class="col-10">
+  <h1>The Gram</h1>
+  <p>This is the home page for the image sharing app called 'The Gram'</p>
+  <%= link_to("Save Image",{controller: :save_image, action: :index}, class: "btn btn-success") %>
+</div>
+<br/>
+
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <% @images.reverse.each do |image| %>
+      <div class="card card-custom mx-5 mb-2">
+        <a href="<%=image.url%>">
+          <img src="<%=image.url%>" alt="" class="card-img">
+        </a>
+      </div>
+    <%end%>
+  </div>
+</div>

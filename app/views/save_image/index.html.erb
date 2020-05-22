@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<body>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
+  <div>
+    <a class="btn btn-primary" href="/">
+      Home
+    </a>
+  </div>
+
+
+  <br/>
+  <div class="col-4">
+  </div>
+
+  <div class="col-4 main-div">
+      <div class="card">
+        <%= form_tag("/save_image/create_image", method: :post) do %>
+          <%= url_field :url,params[:img_url], placeholder: "Image URL", class: " url-field form-control col-11 "%><br/>
+          <%= submit_tag "Submit", class: " submit-btn btn btn-success align-right" %>
+        <% end %>
+      </div>
+      <br/>
+  </div>
+</body>
+</html>
