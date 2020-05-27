@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap', '~> 4.5.0'
 gem 'bootstrap_form', '~> 4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -25,6 +26,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
+  gem 'pry'
   gem 'sqlite3'
 end
 
