@@ -1,8 +1,9 @@
 
-<div class="col-10">
+<div class="col-12">
   <h1>The Gram</h1>
   <p>This is the home page for the image sharing app called 'The Gram'</p>
   <%= link_to("Save Image",{controller: :save_image, action: :new}, class: "btn btn-success") %>
+  <%= link_to("Show all images",{action: :index}, class: "btn btn-primary float-right") %>
 </div>
 <br/>
 
@@ -15,7 +16,7 @@
         </a>
         <div class="row col-10">
           <% image.tags.each do |tag| %>
-            <a href="#"><span class="badge badge-info"><%=tag %> </span></a><br/>
+            <a href="<%=home_filter_url%>?selected_tag=<%=tag%>"><span class="badge badge-info"><%=tag %> </span></a><br/>
           <%end%>
         </div>
       </div>
