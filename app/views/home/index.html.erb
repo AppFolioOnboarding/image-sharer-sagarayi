@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="col-12">
   <h1>The Gram</h1>
   <p>This is the home page for the image sharing app called 'The Gram'</p>
@@ -14,6 +14,8 @@
         <a href="<%=image.url%>">
           <img src="<%=image.url%>" alt="" class="card-img">
         </a>
+        <%= link_to '', {:controller => "home", :action => "destroy", :img_id => image.id },
+                    method: :post, class: 'delete-btn btn-group-sm btn-danger col-1 float-right fa fa-trash'%>
         <div class="row col-10">
           <% image.tags.each do |tag| %>
             <a href="<%=home_filter_url%>?selected_tag=<%=tag%>"><span class="badge badge-info"><%=tag %> </span></a><br/>

@@ -8,4 +8,12 @@ class HomeController < ApplicationController
     @images = Image.tagged_with(params[:selected_tag])
     render :index
   end
+
+  def destroy
+    id = params[:img_id]
+    image_del = Image.find(id)
+    image_del.destroy
+    @images = Image.all
+    redirect_to root_url
+  end
 end
