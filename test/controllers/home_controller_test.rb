@@ -61,4 +61,29 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get home_filter_url, params: { selected_tag: 'scenic' }
     assert_select 'img', 0
   end
+
+  test 'should delete image from database' do
+    10.times do |i|
+      post save_image_create_url, params: { url: ["https://i.picsum.photos/id/#{i}/400/400.jpg"],
+                                            tags: 'scenic,photo' }
+    end
+
+    assert_difference 'Image.count', -1 do
+      post home_destroy_url, params: { img_id: 1 }
+    end
+  end
+
+  test 'should delete image from database and remove from home page' do
+    10.times do |i|
+      post save_image_create_url, params: { url: ["https://i.picsum.photos/id/#{i}/400/400.jpg"],
+                                            tags: 'scenic,photo' }
+    end
+
+    get root_url
+    assert_select 'img', 10
+    post home_destroy_url, params: { img_id: 1 }
+
+    get root_url
+    assert_select 'img', 9
+  end
 end
