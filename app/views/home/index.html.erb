@@ -2,15 +2,15 @@
 <div class="col-12">
   <h1>The Gram</h1>
   <p>This is the home page for the image sharing app called 'The Gram'</p>
-  <%= link_to("Save Image",{controller: :save_image, action: :new}, class: "btn btn-success") %>
-  <%= link_to("Show all images",{action: :index}, class: "btn btn-primary float-right") %>
+  <%= link_to("Save Image",{controller: :save_image, action: :new}, class: " save-img-btn btn btn-success") %>
+  <%= link_to("Show all images",{action: :index}, class: "show-all-img-btn btn btn-primary float-right") %>
 </div>
 <br/>
 
 <div class="container">
   <div class="row mt-5 justify-content-center">
     <% @images.reverse.each do |image| %>
-      <div class="card card-custom mx-5 mb-2">
+      <div class="card card-img-<%= image.id%> card-custom mx-5 mb-2">
         <a href="<%=image.url%>">
           <img src="<%=image.url%>" alt="" class="card-img">
         </a>
