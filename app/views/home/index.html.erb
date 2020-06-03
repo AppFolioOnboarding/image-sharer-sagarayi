@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row mt-5 justify-content-center">
     <% @images.reverse.each do |image| %>
-      <div class="card card-custom mx-5 mb-2">
+      <div class="card card-img-<%= image.id%> card-custom mx-5 mb-2">
         <a href="<%=image.url%>">
           <img src="<%=image.url%>" alt="" class="card-img">
         </a>

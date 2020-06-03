@@ -1,8 +1,11 @@
+ENV['RAILS_ENV'] ||= 'test'
 require 'test_helper'
 
 require 'active_support/test_case'
 require 'capybara/rails'
 require 'capybara/dsl'
+
+Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |file| require file }
 
 class FlowTestCase < ActiveSupport::TestCase
   include Capybara::DSL
