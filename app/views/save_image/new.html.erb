@@ -13,7 +13,7 @@
     </div>
   <% end %>
   <div>
-    <a class="btn btn-primary" href="/">
+    <a class="home-btn btn btn-primary" href="/">
       Home
     </a>
   </div>
@@ -25,7 +25,7 @@
 
   <div class="col-4 main-div">
       <div class="card">
-        <%= form_tag("/save_image/create", method: :post) do %>
+        <%= form_tag("/save_image/create", method: :post, class: "save-form") do %>
           <%= url_field :url,params[:img_url], placeholder: "Image URL", class: " url-field form-control col-11 "%><br/>
           <%= text_field_tag :tags, nil, placeholder: "Tags", class: "tags-field form-control col-11 " ,:data => {:role => 'tagsinput'}%>
           <%= submit_tag "Submit", class: " submit-btn btn btn-success align-right" %>
