@@ -4,6 +4,11 @@ export class FeedbackStore {
   @observable userName;
   @observable comments;
 
+  constructor() {
+    this.userName = '';
+    this.comments = '';
+  }
+
   @action
   setUserName(userName) {
     this.userName = userName;
@@ -12,6 +17,12 @@ export class FeedbackStore {
   @action
   setComments(comments) {
     this.comments = comments;
+  }
+
+  @action
+  clearForm() {
+    this.userName = '';
+    this.comments = '';
   }
 }
 
