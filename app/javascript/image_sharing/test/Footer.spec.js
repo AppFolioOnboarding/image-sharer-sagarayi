@@ -12,7 +12,7 @@ describe('Footer Presence', () => {
     const stores = {
       feedbackStore: {}
     };
-    const component = shallow(<App.wrappedComponent stores={stores} />);
+    const component = shallow(<App stores={stores} />);
     expect(component.find(Footer)).to.have.length(1);
   });
   it('should check if there title of the Footer is correct', () => {
