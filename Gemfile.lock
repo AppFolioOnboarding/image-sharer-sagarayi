@@ -46,6 +46,8 @@ GEM
       activerecord (>= 5.0, < 6.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ae_page_objects (4.3.0)
+      capybara (~> 3.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.7.6)
@@ -138,7 +140,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.1.1)
     puma (3.12.1)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -250,6 +252,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
+  ae_page_objects
   bootstrap (~> 4.5.0)
   bootstrap_form (~> 4.0)
   byebug
